@@ -31,7 +31,7 @@ const Page = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem("token"); // <-- get JWT from localStorage
-            const res = await fetch("http://localhost:5000/api/properties/add-property",{
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/properties/add-property`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
