@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000", // for local dev
-      "https://mini-property-app-1-6vaep4vk2-himanshu-bishts-projects-536830eb.vercel.app", //  Vercel frontend
+      "https://mini-property-app-1-h2ic5v8ul-himanshu-bishts-projects-536830eb.vercel.app/", //  Vercel frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
