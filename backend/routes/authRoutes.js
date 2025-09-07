@@ -18,6 +18,7 @@ router.post("/register", async (req,res)=>{
         await newUser.save();
         res.status(201).json({message: "User registered successfully"});
     } catch (error) {
+        console.error("Register Error:", error); 
         res.status(500).json({message: "Server error in registration"});
     }
 })
@@ -38,6 +39,7 @@ router.post("/login",async (req,res)=>{
         const token = jwt.sign({id: user._id, role: user.role}, process.env.JWT_SECRET, {expiresIn: '1h'});
         res.json({token, user: {id: user._id, name: user.name, email: user.email, role: user.role}});
     } catch (error) {
+        console.error("Login Error:", error);
         res.status(500).json({message: "Server error in login"});
     }
 })
