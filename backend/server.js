@@ -30,11 +30,11 @@ mongoose.connect(process.env.MONGO_URI)
     });
 
     
-// app.get('/',(req,res)=>{
-//     console.log('Hello World');
-//     res.send('Hello World from backend 🚀');
+app.get('/',(req,res)=>{
+    console.log('Hello World');
+    res.send('Backend is running');
 
-// })
+})
 
 app.listen(5000,()=>{
     console.log('Server is running on port 5000');
