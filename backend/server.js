@@ -9,13 +9,16 @@ dotenv.config();
 const app = express();
 
 //middlewaeres
-app.use(cors({
+app.use(
+  cors({
     origin: [
-        "http://localhost:3000", // local dev
-        "https://mini-property-rdbcjtjbk-himanshu-bishts-projects-536830eb.vercel.app/" // deployed frontend
+      "http://localhost:3000", // for local dev
+      "https://mini-property-app-1-6vaep4vk2-himanshu-bishts-projects-536830eb.vercel.app", //  Vercel frontend
     ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-}));app.use(express.json());
+  })
+);
 
 //routes
 app.use("/api/auth", authRoutes);
